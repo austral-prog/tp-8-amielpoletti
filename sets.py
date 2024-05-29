@@ -12,7 +12,8 @@ def clean_ingredients(dish_name, dish_ingredients):
     followed by the de-duped `set` of ingredients as the second item.
     """
 
-    return ()
+    dish_ingredients_set = set(dish_ingredients)
+    return dish_name, dish_ingredients_set
 
 
 def check_drinks(drink_name, drink_ingredients):
@@ -27,5 +28,8 @@ def check_drinks(drink_name, drink_ingredients):
 
     """
 
-    return ""
+    for drink_ingredient in drink_ingredients:
+        if drink_ingredient in ALCOHOLS:
+            return f"{drink_name} Cocktail"
 
+    return f"{drink_name} Mocktail"
